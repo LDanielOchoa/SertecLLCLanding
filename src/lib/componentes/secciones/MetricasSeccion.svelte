@@ -1,7 +1,7 @@
 <script>
     /**
      * Componente MetricasSeccion
-     * Responsabilidad: Mostrar información sobre nosotros y contadores animados con GSAP.
+     * Responsabilidad: Mostrar trayectoria, credibilidad y métricas de SERTEC LLC.
      */
     import { onMount } from 'svelte';
     import { datosMetricas } from '$lib/datos/datos-sitio.js';
@@ -15,7 +15,7 @@
         animarContadores(elementosConteo);
 
         const tarjetas = seccionMetricas.querySelectorAll('.tarjeta-metrica');
-        animarAparicionScroll(tarjetas, { stagger: 0.15 });
+        animarAparicionScroll(tarjetas, { stagger: 0.12 });
     });
 </script>
 
@@ -25,26 +25,24 @@
         <div class="cuadricula-nosotros-superior">
             <div class="bloque-titulo">
                 <Insignia variante="seccion">Sobre Nosotros</Insignia>
-                <h2>Soluciones Solares Inteligentes para Hogares Modernos</h2>
+                <h2>Tu Socio Integral en Mantenimiento de Cocinas Comerciales</h2>
             </div>
             <p class="texto-nosotros">
-                Diseñamos e instalamos sistemas solares de alto rendimiento que ayudan a los propietarios a reducir sus facturas de electricidad y hacer una transición fluida hacia una energía 100% limpia y sostenible.
+                Durante más de 17 años, SERTEC LLC ha sido el aliado de confianza para restaurantes independientes, franquicias nacionales, hoteles, residencias y escuelas en toda el área de Washington DC, Virginia y Maryland. Ofrecemos servicio el mismo día, prevención sin paradas operativas y garantía total en cada intervención.
             </p>
         </div>
 
-        <!-- Tarjetas de Métricas -->
+        <!-- Tarjetas de Métricas Sin Bordes Duros -->
         <div class="cuadricula-metricas">
             {#each datosMetricas as metrica}
                 <div class="tarjeta-metrica">
-                    <div class="metrica-cabecera">
-                        <span 
-                            class="numero-metrica" 
-                            data-meta={metrica.meta} 
-                            data-sufijo={metrica.sufijo}
-                        >
-                            0{metrica.sufijo}
-                        </span>
-                    </div>
+                    <span 
+                        class="numero-metrica" 
+                        data-meta={metrica.meta} 
+                        data-sufijo={metrica.sufijo}
+                    >
+                        0{metrica.sufijo}
+                    </span>
                     <span class="etiqueta-metrica">{metrica.titulo}</span>
                     <p class="descripcion-metrica">{metrica.descripcion}</p>
                 </div>
@@ -56,13 +54,12 @@
 <style>
     .seccion-nosotros {
         background-color: var(--color-blanco);
-        border-top: 1px solid var(--color-borde);
     }
 
     .cuadricula-nosotros-superior {
         display: grid;
         grid-template-columns: 1.2fr 1fr;
-        gap: 40px;
+        gap: 45px;
         align-items: center;
         margin-bottom: 50px;
     }
@@ -74,7 +71,7 @@
     }
 
     .texto-nosotros {
-        font-size: 1.15rem;
+        font-size: 1.12rem;
         line-height: 1.65;
     }
 
@@ -86,27 +83,24 @@
 
     .tarjeta-metrica {
         background-color: var(--color-superficie-card);
-        border: 1px solid var(--color-borde);
         border-radius: var(--radio-xl);
-        padding: 36px 30px;
+        padding: 38px 30px;
         display: flex;
         flex-direction: column;
         gap: 12px;
         transition: var(--transicion-fluida);
-        position: relative;
-        overflow: hidden;
+        box-shadow: var(--sombra-tarjeta);
     }
 
     .tarjeta-metrica:hover {
         transform: translateY(-4px);
-        border-color: var(--color-borde-fuerte);
-        box-shadow: var(--sombra-flotante);
-        background-color: var(--color-blanco);
+        box-shadow: var(--sombra-hover);
+        background-color: var(--color-superficie);
     }
 
     .numero-metrica {
         font-family: var(--fuente-titulos);
-        font-size: clamp(2.6rem, 4vw, 3.4rem);
+        font-size: clamp(2.8rem, 4.2vw, 3.6rem);
         font-weight: 700;
         color: var(--color-oscuro);
         line-height: 1;
@@ -114,7 +108,7 @@
     }
 
     .etiqueta-metrica {
-        font-size: 1.1rem;
+        font-size: 1.15rem;
         font-weight: 600;
         color: var(--color-oscuro);
     }

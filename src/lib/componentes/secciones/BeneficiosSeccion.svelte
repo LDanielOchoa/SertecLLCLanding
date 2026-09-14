@@ -1,10 +1,10 @@
 <script>
     /**
      * Componente BeneficiosSeccion
-     * Responsabilidad: Presentar las ventajas de inversión con columna lateral sticky y animación.
+     * Responsabilidad: Presentar las ventajas de trabajar con SERTEC LLC con columna lateral sticky y diseño sin bordes.
      */
     import { onMount } from 'svelte';
-    import { datosBeneficios } from '$lib/datos/datos-sitio.js';
+    import { datosBeneficios, datosContacto } from '$lib/datos/datos-sitio.js';
     import { animarAparicionScroll } from '$lib/animaciones/animaciones-gsap.js';
     import Insignia from '$lib/componentes/ui/Insignia.svelte';
     import Boton from '$lib/componentes/ui/Boton.svelte';
@@ -13,22 +13,22 @@
 
     onMount(() => {
         const items = contenedorBeneficios.querySelectorAll('.item-beneficio');
-        animarAparicionScroll(items, { stagger: 0.12 });
+        animarAparicionScroll(items, { stagger: 0.1 });
     });
 </script>
 
-<section class="seccion-espaciado seccion-beneficios" bind:this={contenedorBeneficios}>
+<section class="seccion-espaciado seccion-beneficios" bind:this={contenedorBeneficios} id="beneficios">
     <div class="contenedor cuadricula-beneficios">
         <!-- Columna Fija (Sticky) -->
         <div class="beneficios-fijo">
-            <Insignia variante="seccion">Beneficios Solares</Insignia>
-            <h2>Por Qué la Energía Solar es una Inversión Inteligente a Largo Plazo</h2>
+            <Insignia variante="seccion">Por Qué Elegir SERTEC</Insignia>
+            <h2>La Tranquilidad de Mantener Tu Cocina Siempre Operativa</h2>
             <p>
-                La energía solar no solo disminuye tus costos mensuales, sino que blinda tu presupuesto frente al aumento descontrolado de las tarifas eléctricas tradicionales.
+                En el sector gastronómico y comercial, cada minuto de inactividad cuesta dinero y reputación. Desarrollamos planes a la medida de tu operación para que nunca tengas que preocuparte por fallas imprevistas.
             </p>
             <div style="margin-top: 10px;">
-                <Boton href="#consulta" variante="oscuro">
-                    <span>Solicitar Asesoría</span>
+                <Boton href={datosContacto.telefonoLink} variante="oscuro">
+                    <span>Hablar con un Ingeniero</span>
                     <svg class="boton-icono" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <line x1="5" y1="12" x2="19" y2="12"></line>
                         <polyline points="12 5 19 12 12 19"></polyline>
@@ -55,8 +55,6 @@
 <style>
     .seccion-beneficios {
         background-color: var(--color-superficie);
-        border-top: 1px solid var(--color-borde);
-        border-bottom: 1px solid var(--color-borde);
     }
 
     .cuadricula-beneficios {
@@ -82,27 +80,26 @@
 
     .item-beneficio {
         background-color: var(--color-blanco);
-        border: 1px solid var(--color-borde);
         border-radius: var(--radio-xl);
         padding: 30px;
         display: flex;
         align-items: flex-start;
         gap: 22px;
         transition: var(--transicion-fluida);
+        box-shadow: var(--sombra-tarjeta);
     }
 
     .item-beneficio:hover {
-        border-color: var(--color-borde-fuerte);
         transform: translateX(6px);
-        box-shadow: var(--sombra-flotante);
+        box-shadow: var(--sombra-hover);
     }
 
     .beneficio-numero {
         font-family: var(--fuente-titulos);
-        font-size: 1.4rem;
+        font-size: 1.3rem;
         font-weight: 700;
-        color: var(--color-acento);
-        background-color: var(--color-oscuro);
+        color: var(--color-oscuro);
+        background-color: var(--color-acento);
         width: 44px;
         height: 44px;
         border-radius: 50%;
@@ -119,7 +116,7 @@
     }
 
     .titulo-beneficio {
-        font-size: 1.25rem;
+        font-size: 1.22rem;
         font-weight: 600;
         color: var(--color-oscuro);
     }

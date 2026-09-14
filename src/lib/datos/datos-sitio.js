@@ -1,247 +1,261 @@
 /**
- * Datos del Sitio Web - Solaris Energy
- * Centraliza el contenido, métricas, soluciones, proyectos, proceso, testimonios y preguntas frecuentes.
+ * Datos del Sitio Web - SERTEC LLC
+ * Centraliza toda la información, servicios comerciales, métricas, proyectos, proceso, testimonios y contacto.
  */
 
 export const datosNavegacion = [
     { etiqueta: 'Inicio', href: '#inicio' },
     { etiqueta: 'Nosotros', href: '#nosotros' },
-    { etiqueta: 'Soluciones', href: '#soluciones' },
-    { etiqueta: 'Calculadora', href: '#calculadora' },
+    { etiqueta: 'Servicios', href: '#servicios' },
+    { etiqueta: 'Beneficios', href: '#beneficios' },
     { etiqueta: 'Proyectos', href: '#proyectos' },
     { etiqueta: 'Preguntas', href: '#faq' }
 ];
 
 export const datosHero = {
     pruebaSocial: {
-        texto: 'Con la confianza de +500 hogares',
+        texto: '+17 años manteniendo cocinas comerciales 24/7 en DC, VA y MD',
         avatares: [
-            'https://framerusercontent.com/images/vNBcifoGCmAEmxetYuSO67NOcU.jpg',
-            'https://framerusercontent.com/images/P5SaOdJhtAFwAXieRt7XgB1hTA.jpg',
-            'https://framerusercontent.com/images/crtAPSC4ymJakXu1CagocBeUlUw.jpg'
+            'https://images.unsplash.com/photo-1577219491135-ce391730fb2c?auto=format&fit=crop&w=150&q=80',
+            'https://images.unsplash.com/photo-1583394838336-acd977736f90?auto=format&fit=crop&w=150&q=80',
+            'https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=150&q=80'
         ]
     },
-    titulo: 'Energía solar que impulsa al mundo hacia adelante',
-    subtitulo: 'Alimentando hogares y empresas con soluciones solares limpias y renovables. Reduce tu huella de carbono y tus costos energéticos hoy mismo.',
-    ctaPrincipal: 'Solicitar Consulta',
-    ctaSecundario: 'Explorar Soluciones',
-    imagenPrincipal: 'https://framerusercontent.com/images/Ss87WdLoqtNCvaghtqpXQxsznjk.png?width=1376'
+    titulo: 'Mantenimiento y Reparación de Equipos para Restaurantes y Cocinas Comerciales',
+    subtitulo: 'Tu socio estratégico para reparación, instalación y mantenimiento preventivo 24/7 de equipos críticos. Servicio el mismo día para restaurantes, cadenas nacionales, hoteles, escuelas y hospitales.',
+    ctaPrincipal: 'Llamar a Emergencias (888) 621-1115',
+    ctaSecundario: 'Explorar Servicios',
+    imagenPrincipal: 'https://images.unsplash.com/photo-1556910103-1c02745aae4d?auto=format&fit=crop&w=1600&q=85'
 };
 
 export const datosMetricas = [
     {
-        meta: 10,
+        meta: 17,
         sufijo: '+',
-        titulo: 'Años de Experiencia',
-        descripcion: 'Brindando soluciones de ingeniería solar confiables con años de liderazgo en instalaciones residenciales y comerciales.'
+        titulo: 'Años de Trayectoria',
+        descripcion: 'Manteniendo cocinas comerciales y restaurantes operando sin interrupciones con el más alto estándar de la industria.'
     },
     {
-        meta: 500,
+        meta: 1200,
         sufijo: '+',
-        titulo: 'Proyectos Instalados',
-        descripcion: 'Sistemas solares implementados con éxito, generando energía limpia y reduciendo emisiones globales.'
+        titulo: 'Equipos e Instalaciones Atendidas',
+        descripcion: 'Reparaciones e instalaciones certificadas en restaurantes, cadenas nacionales, hoteles y hospitales en DC, VA y MD.'
     },
     {
-        meta: 25,
-        sufijo: ' Años',
-        titulo: 'Garantía de Rendimiento',
-        descripcion: 'Paneles de alta eficiencia diseñados para brindar durabilidad y máxima producción garantizada a largo plazo.'
+        meta: 24,
+        sufijo: '/7',
+        titulo: 'Respuesta Rápida y Emergencias',
+        descripcion: 'Servicio en el mismo día y atención para que tu cocina nunca detenga su producción en horas pico.'
     }
 ];
 
 export const datosSoluciones = [
     {
-        id: 'residencial',
-        titulo: 'Instalación Solar Residencial',
-        descripcion: 'Sistemas solares personalizados para tejados, diseñados con algoritmos de captación para la máxima producción energética.',
-        icono: 'hogar'
+        id: 'refrigeracion',
+        titulo: 'Refrigeración Comercial',
+        descripcion: 'Reparación y mantenimiento de cámaras frigoríficas (walk-in coolers/freezers), máquinas de hielo, vitrinas y congeladores industriales.',
+        icono: 'frio'
     },
     {
-        id: 'ahorro',
-        titulo: 'Ahorro Garantizado de Costos',
-        descripcion: 'Disfruta de hasta un 70% de reducción en tus facturas eléctricas combinando paneles solares y baterías inteligentes.',
-        icono: 'ahorro'
+        id: 'cocina',
+        titulo: 'Equipos de Cocina y Food Service',
+        descripcion: 'Servicio técnico especializado para hornos combinados, freidoras de alto rendimiento, parrillas, estufas y lavavajillas industriales.',
+        icono: 'fuego'
     },
     {
-        id: 'monitoreo',
-        titulo: 'Monitoreo Inteligente 24/7',
-        descripcion: 'Plataforma con inteligencia artificial para supervisar en tiempo real tu consumo, producción y estado del sistema.',
-        icono: 'pantalla'
+        id: 'hvac',
+        titulo: 'Climatización, HVAC y Extracción',
+        descripcion: 'Sistemas de aire acondicionado comercial, calefacción, ventilación y campanas de extracción de humos para cocinas de alto volumen.',
+        icono: 'viento'
     },
     {
-        id: 'instalacion',
-        titulo: 'Instalación Rápida y Segura',
-        descripcion: 'Montaje profesional ejecutado por ingenieros y técnicos certificados en un plazo récord sin interrumpir tus actividades.',
-        icono: 'rayo'
+        id: 'plomeria',
+        titulo: 'Fontanería y Calentadores Comerciales',
+        descripcion: 'Líneas de agua industrial, calentadores de agua de gran capacidad, grifería de alta presión y bombas de circulación.',
+        icono: 'agua'
     },
     {
-        id: 'sostenibilidad',
-        titulo: 'Sostenibilidad y Futuro Verde',
-        descripcion: 'Genera energía 100% limpia para reducir drásticamente tu huella de carbono y proteger el medio ambiente.',
+        id: 'grasas',
+        titulo: 'Trampas de Grasa (Grease Trap)',
+        descripcion: 'Limpieza, mantenimiento, inspección y reemplazo de trampas de grasa cumpliendo con todas las normativas medioambientales.',
+        icono: 'filtro'
+    },
+    {
+        id: 'drenajes',
+        titulo: 'Drenaje y Alcantarillado Comercial',
+        descripcion: 'Desazolve de líneas principales, hidro-lavado a alta presión (hydro-jetting) e inspección por video cámara de tuberías.',
+        icono: 'tuberia'
+    },
+    {
+        id: 'backflow',
+        titulo: 'Prevención de Reflujo (Backflow)',
+        descripcion: 'Certificación anual obligatoria, inspección técnica, reparación e instalación de dispositivos de prevención de reflujo de agua potable.',
         icono: 'escudo'
     },
     {
-        id: 'eficiencia',
-        titulo: 'Eficiencia Energética Total',
-        descripcion: 'Optimiza y distribuye el flujo eléctrico entre tus electrodomésticos y sistemas de almacenamiento con gestión inteligente.',
-        icono: 'engranaje'
+        id: 'exterior',
+        titulo: 'Infraestructura y Facilidades',
+        descripcion: 'Construcción y mantenimiento de plataformas exteriores, cerramientos para equipos, bases de concreto y adecuaciones comerciales.',
+        icono: 'construccion'
     }
 ];
 
 export const datosBeneficios = [
     {
-        titulo: 'Menores Facturas de Electricidad',
-        descripcion: 'Genera tu propia energía y disminuye el impacto de los aumentos continuos de tarifas eléctricas desde el primer día.'
+        titulo: 'Servicio el Mismo Día (Same-Day Emergency)',
+        descripcion: 'Entendemos que un equipo fuera de servicio representa pérdidas directas. Nuestros técnicos responden con rapidez en horas críticas.'
     },
     {
-        titulo: 'Independencia Energética y Respaldo',
-        descripcion: 'Mantén tu hogar y negocio siempre iluminados frente a cortes de suministro con almacenamiento por batería.'
+        titulo: 'Técnicos Certificados y Altamente Capacitados',
+        descripcion: 'Personal experto con dominio de todas las marcas líderes de equipos para restaurantes, refrigeración y sistemas electromecánicos.'
     },
     {
-        titulo: 'Incremento en el Valor del Inmueble',
-        descripcion: 'Las propiedades con infraestructura solar certificada aumentan significativamente su valor comercial y plusvalía.'
+        titulo: 'Mantenimiento Preventivo sin Interrupciones',
+        descripcion: 'Programamos los servicios preventivos en horarios estratégicos para que tu cocina opere al 100% durante el servicio a clientes.'
     },
     {
-        titulo: 'Impacto Ecológico Positivo y Medible',
-        descripcion: 'Cada instalación evita toneladas de emisiones contaminantes de CO2 al año para las futuras generaciones.'
+        titulo: 'Garantía Integral en Mano de Obra y Repuestos',
+        descripcion: 'Respaldamos cada intervención con una garantía integral que te brinda total tranquilidad y seguridad operativa.'
     },
     {
-        titulo: 'Incentivos Fiscales y Deducciones',
-        descripcion: 'Aprovecha créditos tributarios, deducciones y programas de financiamiento diseñados para energías limpias.'
+        titulo: 'Tranquilidad Total (Peace of Mind)',
+        descripcion: 'Un solo proveedor de confianza para refrigeración, cocina, HVAC, fontanería y drenajes en toda tu operación comercial.'
     }
 ];
 
 export const datosProyectos = [
     {
         id: 'p1',
-        titulo: 'Sistema Solar Residencial en Tejado',
-        categoria: 'Residencial · 10 kW',
-        descripcion: 'Sistema fotovoltaico de 10kW para una residencia moderna, reduciendo en un 75% su dependencia de la red eléctrica.',
-        imagen: 'https://framerusercontent.com/images/y20gbmvWCf91BsDb3MiOzpYwKQ.png?width=1328'
+        titulo: 'Restauración Integral de Cocina en Cadena Nacional',
+        categoria: 'Cadenas de Restaurantes · DC Metro',
+        descripcion: 'Mantenimiento y calibración completa de 8 freidoras industriales, hornos de convección y sistema de extracción en tiempo récord.',
+        imagen: 'https://images.unsplash.com/photo-1556910103-1c02745aae4d?auto=format&fit=crop&w=1200&q=80'
     },
     {
         id: 'p2',
-        titulo: 'Instalación Solar Comercial de Alta Capacidad',
-        categoria: 'Comercial · 40 kW',
-        descripcion: 'Sistema de 40kW instalado sobre nave comercial para abastecer la operación diurna completa de maquinaria y oficinas.',
-        imagen: 'https://framerusercontent.com/images/zSsNc6A7TsxzWG0fw5Xha8eu3Q.png?width=1328'
+        titulo: 'Reemplazo de Cámaras Frigoríficas en Hotel Boutique',
+        categoria: 'Hospitality & Hoteles · Alexandria, VA',
+        descripcion: 'Instalación de dos cámaras walk-in con compresores ultra silenciosos y monitoreo térmico automatizado de temperatura.',
+        imagen: 'https://images.unsplash.com/photo-1583394838336-acd977736f90?auto=format&fit=crop&w=1200&q=80'
     },
     {
         id: 'p3',
-        titulo: 'Configuración con Microinversores Inteligentes',
-        categoria: 'Residencial Avanzado · 15 kW',
-        descripcion: 'Módulos monocristalinos integrados con tecnología de optimización individual para tejados con orientación mixta.',
-        imagen: 'https://framerusercontent.com/images/SpbvEPTkWhMgwMirh9WYaeeVbV8.png?width=1328'
+        titulo: 'Optimización de Climatización y Campanas de Humo',
+        categoria: 'Cocina Central · Tysons Corner, VA',
+        descripcion: 'Adecuación de flujo de aire y reemplazo de motores de extracción para cocina de producción continua con 15 chefs simultáneos.',
+        imagen: 'https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=1200&q=80'
     },
     {
         id: 'p4',
-        titulo: 'Diagnóstico e Inspección Preventiva',
-        categoria: 'Mantenimiento y Rendimiento',
-        descripcion: 'Servicio de termografía y calibración de inversores que restauró al 100% la eficiencia operativa de la planta.',
-        imagen: 'https://framerusercontent.com/images/PbMWA2lrkziF7IzfURSETqJLjys.png?width=1232'
+        titulo: 'Plan Preventivo de Drenajes y Trampas de Grasa',
+        categoria: 'Residencia de Retiro y Salud · Bethesda, MD',
+        descripcion: 'Hidro-lavado preventivo de líneas principales y certificación de dispositivos de reflujo para asegurar continuidad 100% higiénica.',
+        imagen: 'https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=1200&q=80'
     }
 ];
 
 export const datosProceso = [
     {
         paso: '01',
-        titulo: 'Evaluación del Hogar',
+        titulo: 'Contacto Directo o Emergencia 24/7',
         puntos: [
-            'Evaluación técnica virtual o presencial',
-            'Diseño de ingeniería solar a la medida',
-            'Análisis financiero y proyección de ahorro'
+            'Línea de atención telefónica inmediata',
+            'Atención para restaurantes y facilidades',
+            'Despacho de técnicos el mismo día'
         ]
     },
     {
         paso: '02',
-        titulo: 'Cotización Personalizada',
+        titulo: 'Diagnóstico en Sitio',
         puntos: [
-            'Especificaciones y costos transparentes',
-            'Opciones flexibles de financiamiento',
-            'Gestión total de licencias y permisos'
+            'Inspección técnica exhaustiva',
+            'Presupuesto transparente sin sorpresas',
+            'Repuestos originales certificados'
         ]
     },
     {
         paso: '03',
-        titulo: 'Instalación Experta',
+        titulo: 'Reparación e Instalación Experta',
         puntos: [
-            'Equipo de ingenieros y técnicos certificados',
-            'Montaje seguro en 1 a 3 días hábiles',
-            'Control de calidad e inspección de seguridad'
+            'Trabajo limpio y sin interrupciones operativas',
+            'Cumplimiento de códigos locales de salud y seguridad',
+            'Pruebas de rendimiento en caliente/frío'
         ]
     },
     {
         paso: '04',
-        titulo: 'Activación del Sistema',
+        titulo: 'Garantía y Mantenimiento Continuo',
         puntos: [
-            'Interconexión a la red y pruebas de carga',
-            'Sincronización con la app de monitoreo',
-            'Inicio inmediato de generación limpia'
+            'Garantía por escrito en piezas y labor',
+            'Planes preventivos personalizados',
+            'Soporte permanente para tu tranquilidad'
         ]
     }
 ];
 
 export const datosTestimonios = [
     {
-        nombre: 'Daniel Carter',
-        rol: 'Propietario de Vivienda',
-        avatar: 'https://framerusercontent.com/images/vNBcifoGCmAEmxetYuSO67NOcU.jpg',
-        cita: 'Cambiar a solar con este equipo fue facilísimo. Nuestras facturas de electricidad cayeron drásticamente desde el primer mes.',
+        nombre: 'Carlos Mendoza',
+        rol: 'Chef Ejecutivo · Restaurante de Cadena en DC',
+        avatar: 'https://images.unsplash.com/photo-1583394838336-acd977736f90?auto=format&fit=crop&w=150&q=80',
+        cita: 'Cuando el walk-in freezer falló un viernes en la noche, el equipo de SERTEC llegó en menos de 2 horas y salvó todo nuestro inventario. Son unos verdaderos salvavidas.',
         estrellas: 5
     },
     {
-        nombre: 'Michael Brooks',
-        rol: 'Gerente Comercial',
-        avatar: 'https://framerusercontent.com/images/P5SaOdJhtAFwAXieRt7XgB1hTA.jpg',
-        cita: 'Instalación impecable y soporte continuo en cada fase del proyecto. La inversión ya está rindiendo frutos.',
+        nombre: 'Marcus Vance',
+        rol: 'Director de Operaciones · Hotel en Alexandria, VA',
+        avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=150&q=80',
+        cita: 'Llevamos más de 6 años confiando en SERTEC para la refrigeración, hornos y trampas de grasa. Su mantenimiento preventivo redujo nuestras fallas de emergencia a cero.',
         estrellas: 5
     },
     {
-        nombre: 'Emily Parker',
-        rol: 'Cliente Residencial',
-        avatar: 'https://framerusercontent.com/images/crtAPSC4ymJakXu1CagocBeUlUw.jpg',
-        cita: 'El sistema funciona de maravilla y la aplicación móvil nos permite ver en vivo cuánta energía generamos diariamente.',
+        nombre: 'Elena Rostova',
+        rol: 'Gerente General · Restaurante Italiano',
+        avatar: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=150&q=80',
+        cita: 'Profesionalismo de principio a fin. Trabajan limpio, con respeto por las normas de cocina y siempre con repuestos originales. Altamente recomendados.',
         estrellas: 5
     },
     {
-        nombre: 'Ethan Walker',
-        rol: 'Arquitecto y Diseñador',
-        avatar: 'https://framerusercontent.com/images/u0s4V4MeDEaLubizTBg0qAdAWA.jpg',
-        cita: 'Excelente estética y pulcritud en la instalación en tejado. Gran profesionalismo de todo el equipo técnico.',
-        estrellas: 5
-    },
-    {
-        nombre: 'James Walker',
-        rol: 'Empresario Local',
-        avatar: 'https://framerusercontent.com/images/Bf5PpwlHezvzdhBMuCDaUnAlihI.png',
-        cita: 'Atención personalizada de primer nivel. Nos guiaron paso a paso con los trámites y la instalación fue rápida.',
+        nombre: 'David Thompson',
+        rol: 'Administrador de Instalaciones · Centro Educativo',
+        avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=150&q=80',
+        cita: 'SERTEC se encarga de nuestras certificaciones de Backflow, HVAC y lavavajillas. Excelente servicio al cliente y facturación transparente.',
         estrellas: 5
     }
 ];
 
 export const datosFaqs = [
     {
-        pregunta: '¿Qué servicios solares ofrecen?',
-        respuesta: 'Ofrecemos soluciones solares integrales llave en mano: consultoría energética, diseño personalizado de ingeniería, suministro e instalación de paneles e inversores premium, trámites de interconexión y planes de mantenimiento.'
+        pregunta: '¿Ofrecen servicio de emergencia el mismo día?',
+        respuesta: 'Sí. Atendemos emergencias críticas las 24 horas del día, los 7 días de la semana. Entendemos que una falla en refrigeración o cocina detiene tu facturación, por lo que priorizamos las respuestas inmediatas en toda el área metropolitana de DC, Virginia y Maryland.'
     },
     {
-        pregunta: '¿Cuánto dinero puedo ahorrar con paneles solares?',
-        respuesta: 'Dependiendo de tu consumo actual, la tarifa de tu proveedor eléctrico y la radiación solar, la mayoría de los usuarios ahorran entre un 60% y un 80% en su gasto de electricidad.'
+        pregunta: '¿Qué tipo de equipos comerciales reparan e instalan?',
+        respuesta: 'Cubrimos la gama completa de equipos gastronómicos y comerciales: cuartos fríos, máquinas de hielo, freidoras, hornos combinados, parrillas, estufas, lavavajillas de alta temperatura, campanas de extracción, sistemas HVAC, fontanería comercial, calentadores y trampas de grasa.'
     },
     {
-        pregunta: '¿Cuánto tiempo toma la instalación física?',
-        respuesta: 'Para instalaciones residenciales estándar, el montaje físico se realiza en tan solo 1 a 3 días hábiles una vez aprobados los permisos correspondientes.'
+        pregunta: '¿Trabajan con cadenas nacionales y establecimientos institucionales?',
+        respuesta: 'Sí. Entre nuestros clientes habituales se encuentran cadenas de restaurantes a nivel nacional, hoteles, residencias de retiro, hospitales y centros educativos en Washington DC, Alexandria, Arlington, Fairfax, Bethesda y alrededores.'
     },
     {
-        pregunta: '¿Los paneles solares funcionan en días nublados o con lluvia?',
-        respuesta: 'Sí, los paneles fotovoltaicos captan tanto la luz solar directa como la radiación difusa a través de las nubes, asegurando una producción continua de energía.'
+        pregunta: '¿Ofrecen planes de mantenimiento preventivo?',
+        respuesta: 'Sí. Diseñamos programas personalizados de mantenimiento preventivo mensual, trimestral o semestral adaptados al volumen de tu cocina para prevenir costosas fallas imprevistas y alargar la vida útil de tus equipos.'
     },
     {
-        pregunta: '¿Cuál es la vida útil y garantía de los paneles?',
-        respuesta: 'Nuestros paneles cuentan con una garantía de rendimiento de 25 años y están diseñados para operar de manera óptima por más de 30 años con mantenimiento mínimo.'
+        pregunta: '¿Realizan certificaciones anuales de Prevención de Reflujo (Backflow)?',
+        respuesta: 'Sí. Contamos con técnicos certificados para realizar las pruebas anuales obligatorias de dispositivos de prevención de reflujo, tramitar la documentación ante las autoridades locales de agua y realizar reparaciones inmediatas si se detecta alguna fuga.'
     },
     {
-        pregunta: '¿Qué tipo de mantenimiento requieren los paneles?',
-        respuesta: 'El mantenimiento es muy simple y consiste principalmente en limpiezas periódicas para retirar polvo y revisiones anuales del inversor y cableado, las cuales ofrecemos en nuestros planes de servicio.'
+        pregunta: '¿Qué garantía tienen los trabajos de SERTEC LLC?',
+        respuesta: 'Todos nuestros servicios de reparación e instalación cuentan con una garantía completa por escrito tanto en mano de obra como en repuestos originales de fábrica.'
     }
 ];
+
+export const datosContacto = {
+    empresa: 'SERTEC LLC',
+    telefono: '(888) 621-1115',
+    telefonoLink: 'tel:8886211115',
+    email: 'admin@sertecllc.net',
+    direccion: '5510 Vine Street, Alexandria, VA 22310',
+    areaServicio: 'Washington D.C., Virginia y Maryland'
+};

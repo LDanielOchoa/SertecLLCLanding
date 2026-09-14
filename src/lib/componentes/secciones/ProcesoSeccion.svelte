@@ -1,7 +1,7 @@
 <script>
     /**
      * Componente ProcesoSeccion
-     * Responsabilidad: Describir el proceso en 4 pasos con animaciones escalonadas de GSAP.
+     * Responsabilidad: Describir el flujo de atención y servicio de SERTEC LLC en 4 pasos con animaciones GSAP.
      */
     import { onMount } from 'svelte';
     import { datosProceso } from '$lib/datos/datos-sitio.js';
@@ -16,13 +16,13 @@
     });
 </script>
 
-<section class="seccion-espaciado seccion-proceso" bind:this={contenedorProceso}>
+<section class="seccion-espaciado seccion-proceso" bind:this={contenedorProceso} id="proceso">
     <div class="contenedor">
         <!-- Encabezado Centrado -->
         <div class="encabezado-seccion-centro">
-            <Insignia variante="seccion">Cómo Funciona</Insignia>
-            <h2>De la Consulta a la Energía Limpia en 4 Simples Pasos</h2>
-            <p>Hacemos que el cambio hacia la autosuficiencia solar sea transparente, ágil y garantizado.</p>
+            <Insignia variante="seccion">Metodología de Respuesta</Insignia>
+            <h2>Atención Rápida y Resolución en 4 Pasos</h2>
+            <p>Optimizamos cada fase de atención para que tu cocina comercial recupere su operatividad en el menor tiempo posible.</p>
         </div>
 
         <!-- Cuadrícula de 4 Pasos -->
@@ -55,12 +55,11 @@
 <style>
     .seccion-proceso {
         background-color: var(--color-blanco);
-        border-top: 1px solid var(--color-borde);
     }
 
     .encabezado-seccion-centro {
         text-align: center;
-        max-width: 720px;
+        max-width: 760px;
         margin: 0 auto 55px auto;
         display: flex;
         flex-direction: column;
@@ -75,21 +74,20 @@
     }
 
     .tarjeta-paso {
-        background-color: var(--color-superficie-card);
-        border: 1px solid var(--color-borde);
+        background-color: var(--color-superficie);
+        border: none;
         border-radius: var(--radio-xl);
-        padding: 34px 26px;
+        padding: 36px 28px;
         display: flex;
         flex-direction: column;
-        gap: 16px;
+        gap: 18px;
         transition: var(--transicion-fluida);
         position: relative;
     }
 
     .tarjeta-paso:hover {
-        background-color: var(--color-blanco);
-        border-color: var(--color-borde-fuerte);
-        transform: translateY(-5px);
+        background-color: var(--color-superficie-card);
+        transform: translateY(-6px);
         box-shadow: var(--sombra-flotante);
     }
 
@@ -101,7 +99,7 @@
 
     .numero-paso {
         font-family: var(--fuente-titulos);
-        font-size: 2.4rem;
+        font-size: 2.5rem;
         font-weight: 700;
         color: var(--color-oscuro);
         line-height: 1;
@@ -109,22 +107,23 @@
     }
 
     .paso-linea-decorativa {
-        width: 32px;
-        height: 2px;
+        width: 36px;
+        height: 3px;
         background-color: var(--color-acento);
-        border-radius: 2px;
+        border-radius: 4px;
     }
 
     .titulo-paso {
         font-size: 1.25rem;
         font-weight: 600;
         color: var(--color-oscuro);
+        line-height: 1.3;
     }
 
     .lista-puntos-paso {
         display: flex;
         flex-direction: column;
-        gap: 10px;
+        gap: 12px;
         margin-top: 4px;
     }
 
@@ -138,8 +137,8 @@
     }
 
     .icono-check {
-        width: 17px;
-        height: 17px;
+        width: 18px;
+        height: 18px;
         color: var(--color-oscuro);
         flex-shrink: 0;
         margin-top: 2px;
@@ -148,6 +147,7 @@
     @media (max-width: 1024px) {
         .cuadricula-proceso {
             grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
         }
     }
 

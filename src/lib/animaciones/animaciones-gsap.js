@@ -1,12 +1,20 @@
 /**
  * Módulo de Animaciones GSAP
- * Encapsula la lógica de animaciones avanzadas, transiciones y ScrollTrigger.
+ * Encapsula la lógica de animaciones avanzadas, transiciones y ScrollTrigger respetando accesibilidad.
  */
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 if (typeof window !== 'undefined') {
     gsap.registerPlugin(ScrollTrigger);
+}
+
+/**
+ * Verifica si el usuario tiene activada la preferencia de reducción de movimiento
+ */
+export function prefiereMovimientoReducido() {
+    if (typeof window === 'undefined') return false;
+    return window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 }
 
 /**
@@ -18,29 +26,26 @@ export function animarHero(contenedor) {
     const elementos = contenedor.querySelectorAll('[data-animar-hero]');
     const imagenHero = contenedor.querySelector('.hero-visual-contenedor');
 
+    if (prefiereMovimientoReducido()) {
+        gsap.set(elementos, { opacity: 1, y: 0 });
+        if (imagenHero) gsap.set(imagenHero, { opacity: 1, y: 0, scale: 1 });
+        return;
+    }
+
     const lineaTiempo = gsap.timeline({ defaults: { ease: 'power3.out' } });
 
     lineaTiempo
         .fromTo(
             elementos,
-            { y: 30, opacity: 0 },
-            { y: 0, opacity: 1, duration: 1, stagger: 0.15 }
+            { y: 28, opacity: 0 },
+            { y: 0, opacity: 1, duration: 0.9, stagger: 0.12 }
         )
         .fromTo(
             imagenHero,
-            { scale: 0.94, opacity: 0, y: 40 },
-            { scale: 1, opacity: 1, y: 0, duration: 1.2, ease: 'power2.out' },
-            '-=0.7'
+            { scale: 0.96, opacity: 0, y: 30 },
+            { scale: 1, opacity: 1, y: 0, duration: 1.1, ease: 'power2.out' },
+            '-=0.6'
         );
-
-    // Efecto de flotación sutil continuo
-    gsap.to(imagenHero, {
-        y: -10,
-        duration: 3.5,
-        repeat: -1,
-        yoyo: true,
-        ease: 'sine.inOut'
-    });
 }
 
 /**
@@ -49,18 +54,23 @@ export function animarHero(contenedor) {
 export function animarAparicionScroll(elementos, opciones = {}) {
     if (!elementos || typeof window === 'undefined') return;
 
+    if (prefiereMovimientoReducido()) {
+        gsap.set(elementos, { opacity: 1, y: 0 });
+        return;
+    }
+
     gsap.fromTo(
         elementos,
-        { y: 35, opacity: 0 },
+        { y: 30, opacity: 0 },
         {
             y: 0,
             opacity: 1,
-            duration: 0.8,
-            stagger: opciones.stagger || 0.12,
+            duration: 0.75,
+            stagger: opciones.stagger || 0.1,
             ease: 'power3.out',
             scrollTrigger: {
                 trigger: elementos[0] || elementos,
-                start: 'top 85%',
+                start: 'top 88%',
                 toggleActions: 'play none none none'
             }
         }
@@ -76,11 +86,17 @@ export function animarContadores(elementos) {
     elementos.forEach(elemento => {
         const meta = parseFloat(elemento.getAttribute('data-meta') || '0');
         const sufijo = elemento.getAttribute('data-sufijo') || '';
+
+        if (prefiereMovimientoReducido()) {
+            elemento.textContent = `${meta}${sufijo}`;
+            return;
+        }
+
         const objetoConteo = { valor: 0 };
 
         gsap.to(objetoConteo, {
             valor: meta,
-            duration: 2,
+            duration: 1.8,
             ease: 'power2.out',
             scrollTrigger: {
                 trigger: elemento,
@@ -95,10 +111,10 @@ export function animarContadores(elementos) {
 }
 
 /**
- * Efecto de iluminación interactiva (Glow) al mover el cursor sobre tarjetas
+ * Efecto de iluminación interactiva sutil (Glow) al mover el cursor sobre tarjetas
  */
 export function configurarEfectoGlow(tarjeta) {
-    if (!tarjeta || typeof window === 'undefined') return;
+    if (!tarjeta || typeof window === 'undefined' || prefiereMovimientoReducido()) return;
 
     tarjeta.addEventListener('mousemove', (evento) => {
         const rectangulo = tarjeta.getBoundingClientRect();

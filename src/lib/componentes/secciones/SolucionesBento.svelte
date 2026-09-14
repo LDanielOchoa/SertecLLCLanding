@@ -1,7 +1,7 @@
 <script>
     /**
      * Componente SolucionesBento
-     * Responsabilidad: Cuadrícula Bento de 6 soluciones con interacción visual y animación.
+     * Responsabilidad: Presentar la gama de 8 servicios comerciales de SERTEC LLC con diseño Bento limpio sin bordes.
      */
     import { onMount } from 'svelte';
     import { datosSoluciones } from '$lib/datos/datos-sitio.js';
@@ -12,21 +12,21 @@
 
     onMount(() => {
         const tarjetas = contenedorBento.querySelectorAll('.tarjeta-bento');
-        animarAparicionScroll(tarjetas, { stagger: 0.1 });
+        animarAparicionScroll(tarjetas, { stagger: 0.08 });
         tarjetas.forEach(tarjeta => configurarEfectoGlow(tarjeta));
     });
 </script>
 
-<section class="seccion-espaciado seccion-soluciones" bind:this={contenedorBento} id="soluciones">
+<section class="seccion-espaciado seccion-soluciones" bind:this={contenedorBento} id="servicios">
     <div class="contenedor">
         <!-- Encabezado Centrado -->
         <div class="encabezado-seccion-centro">
-            <Insignia variante="seccion">Nuestras Soluciones</Insignia>
-            <h2>Soluciones Solares Inteligentes Diseñadas para Hogares y Empresas</h2>
-            <p>Tecnología de última generación y proyectos a la medida para maximizar el ahorro y la eficiencia.</p>
+            <Insignia variante="seccion">Nuestros Servicios</Insignia>
+            <h2>Soluciones Integrales para Restaurantes y Equipos Comerciales</h2>
+            <p>Mantenimiento preventivo, reparación de emergencia e instalación con técnicos certificados.</p>
         </div>
 
-        <!-- Cuadrícula Bento -->
+        <!-- Cuadrícula Bento de 8 Servicios -->
         <div class="cuadricula-soluciones">
             {#each datosSoluciones as solucion}
                 <div class="tarjeta-bento">
@@ -34,25 +34,30 @@
                     
                     <div class="tarjeta-contenido">
                         <div class="icono-contenedor">
-                            {#if solucion.icono === 'hogar'}
+                            {#if solucion.icono === 'frio'}
                                 <svg class="icono-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
-                                    <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                                    <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6M2 12h20"></path>
                                 </svg>
-                            {:else if solucion.icono === 'ahorro'}
+                            {:else if solucion.icono === 'fuego'}
                                 <svg class="icono-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <line x1="12" y1="1" x2="12" y2="23"></line>
-                                    <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                                    <path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"></path>
                                 </svg>
-                            {:else if solucion.icono === 'pantalla'}
+                            {:else if solucion.icono === 'viento'}
                                 <svg class="icono-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
-                                    <line x1="8" y1="21" x2="16" y2="21"></line>
-                                    <line x1="12" y1="17" x2="12" y2="21"></line>
+                                    <path d="M9.59 4.59A2 2 0 1 1 11 8H2m10.59 11.41A2 2 0 1 0 14 16H2m15.73-8.27A2.5 2.5 0 1 1 19.5 12H2"></path>
                                 </svg>
-                            {:else if solucion.icono === 'rayo'}
+                            {:else if solucion.icono === 'agua'}
                                 <svg class="icono-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+                                    <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"></path>
+                                </svg>
+                            {:else if solucion.icono === 'filtro'}
+                                <svg class="icono-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"></polygon>
+                                </svg>
+                            {:else if solucion.icono === 'tuberia'}
+                                <svg class="icono-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <rect x="2" y="8" width="20" height="8" rx="2"></rect>
+                                    <path d="M6 8V4M18 8V4M6 16v4M18 16v4"></path>
                                 </svg>
                             {:else if solucion.icono === 'escudo'}
                                 <svg class="icono-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -60,9 +65,8 @@
                                 </svg>
                             {:else}
                                 <svg class="icono-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <circle cx="12" cy="12" r="10"></circle>
-                                    <line x1="12" y1="8" x2="12" y2="12"></line>
-                                    <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                                    <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+                                    <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
                                 </svg>
                             {/if}
                         </div>
@@ -83,7 +87,7 @@
 
     .encabezado-seccion-centro {
         text-align: center;
-        max-width: 720px;
+        max-width: 740px;
         margin: 0 auto 55px auto;
         display: flex;
         flex-direction: column;
@@ -93,39 +97,37 @@
 
     .cuadricula-soluciones {
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 24px;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 22px;
     }
 
     .tarjeta-bento {
         background-color: var(--color-superficie-card);
-        border: 1px solid var(--color-borde);
         border-radius: var(--radio-xl);
-        padding: 36px 30px;
+        padding: 34px 26px;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
         transition: var(--transicion-fluida);
         position: relative;
         overflow: hidden;
+        box-shadow: var(--sombra-tarjeta);
     }
 
     .tarjeta-bento:hover {
         transform: translateY(-5px);
-        border-color: var(--color-borde-fuerte);
-        box-shadow: 0 16px 36px rgba(0, 0, 0, 0.05);
-        background-color: var(--color-blanco);
+        box-shadow: var(--sombra-hover);
+        background-color: var(--color-superficie);
     }
 
-    /* Efecto de Luz / Resplandor interactivo */
     .efecto-resplandor {
         position: absolute;
-        width: 250px;
-        height: 250px;
-        top: var(--cursor-y, -250px);
-        left: var(--cursor-x, -250px);
+        width: 260px;
+        height: 260px;
+        top: var(--cursor-y, -260px);
+        left: var(--cursor-x, -260px);
         transform: translate(-50%, -50%);
-        background: radial-gradient(circle, rgba(226, 250, 90, 0.25) 0%, rgba(226, 250, 90, 0) 70%);
+        background: radial-gradient(circle, rgba(226, 250, 90, 0.22) 0%, rgba(226, 250, 90, 0) 70%);
         pointer-events: none;
         opacity: 0;
         transition: opacity 0.3s ease;
@@ -145,43 +147,41 @@
     }
 
     .icono-contenedor {
-        width: 52px;
-        height: 52px;
+        width: 50px;
+        height: 50px;
         background-color: var(--color-blanco);
         border-radius: 50%;
         display: flex;
         align-items: center;
         justify-content: center;
-        border: 1px solid var(--color-borde);
-        margin-bottom: 12px;
-        box-shadow: var(--sombra-tarjeta);
+        margin-bottom: 8px;
+        box-shadow: 0 4px 14px rgba(0, 0, 0, 0.04);
         transition: var(--transicion-fluida);
     }
 
     .tarjeta-bento:hover .icono-contenedor {
         background-color: var(--color-acento);
-        border-color: var(--color-acento);
         transform: scale(1.06);
     }
 
     .icono-svg {
-        width: 24px;
-        height: 24px;
+        width: 22px;
+        height: 22px;
         stroke: var(--color-oscuro);
     }
 
     .titulo-solucion {
-        font-size: 1.3rem;
+        font-size: 1.18rem;
         font-weight: 600;
         color: var(--color-oscuro);
     }
 
     .descripcion-solucion {
-        font-size: 0.95rem;
+        font-size: 0.92rem;
         line-height: 1.55;
     }
 
-    @media (max-width: 1024px) {
+    @media (max-width: 1200px) {
         .cuadricula-soluciones {
             grid-template-columns: repeat(2, 1fr);
         }

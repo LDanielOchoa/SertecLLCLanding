@@ -1,7 +1,7 @@
 <script>
     /**
      * Componente TestimoniosSeccion
-     * Responsabilidad: Mostrar testimonios de clientes con interacción de arrastre y animaciones.
+     * Responsabilidad: Mostrar testimonios de clientes comerciales con interacción de arrastre y animaciones GSAP.
      */
     import { onMount } from 'svelte';
     import { datosTestimonios } from '$lib/datos/datos-sitio.js';
@@ -42,12 +42,12 @@
     });
 </script>
 
-<section class="seccion-espaciado seccion-testimonios" bind:this={contenedorTestimonios}>
+<section class="seccion-espaciado seccion-testimonios" bind:this={contenedorTestimonios} id="testimonios">
     <div class="contenedor" style="margin-bottom: 45px;">
         <div class="encabezado-seccion-centro">
-            <Insignia variante="seccion">Testimonios</Insignia>
-            <h2>Soluciones Solares Confiables para una Vida Sostenible</h2>
-            <p>Historias reales de familias y comercios que ya disfrutan de la libertad y el ahorro solar.</p>
+            <Insignia variante="seccion">Testimonios de Clientes</Insignia>
+            <h2>Confianza Probada en Cocinas de Alto Rendimiento</h2>
+            <p>Descubre por qué los principales restaurantes, hoteles y operadores comerciales de la región confían en el equipo de SERTEC LLC.</p>
         </div>
     </div>
 
@@ -86,12 +86,11 @@
     .seccion-testimonios {
         background-color: var(--color-superficie);
         overflow: hidden;
-        border-top: 1px solid var(--color-borde);
     }
 
     .encabezado-seccion-centro {
         text-align: center;
-        max-width: 720px;
+        max-width: 760px;
         margin: 0 auto;
         display: flex;
         flex-direction: column;
@@ -126,37 +125,36 @@
         flex: 0 0 380px;
         scroll-snap-align: start;
         background-color: var(--color-blanco);
-        border: 1px solid var(--color-borde);
-        border-radius: var(--radio-xl);
-        padding: 34px 28px;
+        border: none;
+        border-radius: var(--radio-2xl);
+        padding: 36px 30px;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        gap: 22px;
+        gap: 24px;
         box-shadow: var(--sombra-tarjeta);
         transition: var(--transicion-fluida);
     }
 
     .tarjeta-testimonio:hover {
-        transform: translateY(-4px);
-        border-color: var(--color-borde-fuerte);
+        transform: translateY(-6px);
         box-shadow: var(--sombra-flotante);
     }
 
     .estrellas-grupo {
         display: flex;
-        gap: 4px;
-        color: var(--color-oscuro);
+        gap: 5px;
+        color: #f59e0b;
     }
 
     .icono-estrella {
-        width: 17px;
-        height: 17px;
+        width: 18px;
+        height: 18px;
     }
 
     .cita-testimonio {
         font-size: 1.02rem;
-        line-height: 1.6;
+        line-height: 1.65;
         color: var(--color-oscuro);
         font-weight: 400;
     }
@@ -165,13 +163,13 @@
         display: flex;
         align-items: center;
         gap: 14px;
-        padding-top: 10px;
-        border-top: 1px solid var(--color-borde);
+        padding-top: 14px;
+        border-top: 1px solid rgba(0, 0, 0, 0.05);
     }
 
     .avatar-autor {
-        width: 46px;
-        height: 46px;
+        width: 48px;
+        height: 48px;
         border-radius: 50%;
         object-fit: cover;
     }
@@ -190,7 +188,7 @@
     @media (max-width: 640px) {
         .tarjeta-testimonio {
             flex: 0 0 300px;
-            padding: 26px 20px;
+            padding: 28px 22px;
         }
         .deslizador-testimonios-envoltorio {
             padding: 0 16px;

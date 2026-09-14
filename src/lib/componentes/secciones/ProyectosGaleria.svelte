@@ -1,7 +1,7 @@
 <script>
     /**
      * Componente ProyectosGaleria
-     * Responsabilidad: Mostrar el catálogo de proyectos recientes con animaciones e interactividad.
+     * Responsabilidad: Mostrar casos de éxito de SERTEC LLC con diseño limpio y sin bordes.
      */
     import { onMount } from 'svelte';
     import { datosProyectos } from '$lib/datos/datos-sitio.js';
@@ -12,7 +12,7 @@
 
     onMount(() => {
         const tarjetas = contenedorProyectos.querySelectorAll('.tarjeta-proyecto');
-        animarAparicionScroll(tarjetas, { stagger: 0.15 });
+        animarAparicionScroll(tarjetas, { stagger: 0.12 });
     });
 </script>
 
@@ -20,9 +20,9 @@
     <div class="contenedor">
         <!-- Encabezado Centrado -->
         <div class="encabezado-seccion-centro">
-            <Insignia variante="seccion">Proyectos Recientes</Insignia>
-            <h2>Instalaciones Solares Recientes</h2>
-            <p>Conoce algunos de nuestros casos de éxito residenciales y comerciales con ingeniería de primer nivel.</p>
+            <Insignia variante="seccion">Casos de Éxito</Insignia>
+            <h2>Proyectos e Instalaciones Recientes</h2>
+            <p>Conoce cómo ayudamos a cadenas de restaurantes, hoteles e instalaciones comerciales a operar al 100%.</p>
         </div>
 
         <!-- Cuadrícula de Proyectos -->
@@ -71,8 +71,7 @@
     }
 
     .tarjeta-proyecto {
-        background-color: var(--color-blanco);
-        border: 1px solid var(--color-borde);
+        background-color: var(--color-superficie-card);
         border-radius: var(--radio-2xl);
         overflow: hidden;
         transition: var(--transicion-fluida);
@@ -83,13 +82,13 @@
 
     .tarjeta-proyecto:hover {
         transform: translateY(-6px);
-        border-color: var(--color-borde-fuerte);
-        box-shadow: var(--sombra-flotante);
+        box-shadow: var(--sombra-hover);
+        background-color: var(--color-superficie);
     }
 
     .imagen-contenedor {
         width: 100%;
-        height: 270px;
+        height: 280px;
         position: relative;
         overflow: hidden;
         background-color: var(--color-superficie);
@@ -103,14 +102,14 @@
     }
 
     .tarjeta-proyecto:hover .imagen-proyecto {
-        transform: scale(1.06);
+        transform: scale(1.05);
     }
 
     .badge-categoria {
         position: absolute;
         bottom: 16px;
         left: 16px;
-        background-color: rgba(17, 17, 17, 0.85);
+        background-color: rgba(15, 15, 17, 0.88);
         color: var(--color-acento);
         font-size: 0.78rem;
         font-weight: 600;
@@ -129,7 +128,7 @@
     }
 
     .titulo-proyecto {
-        font-size: 1.35rem;
+        font-size: 1.3rem;
         font-weight: 600;
         color: var(--color-oscuro);
     }

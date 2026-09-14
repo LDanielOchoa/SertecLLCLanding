@@ -11,8 +11,14 @@
     -moz-osx-font-smoothing: grayscale;
 }
 
+/* Soporte de scroll suave cuando no hay preferencia de movimiento reducido */
+@media (prefers-reduced-motion: no-preference) {
+    html {
+        scroll-behavior: smooth;
+    }
+}
+
 html {
-    scroll-behavior: smooth;
     font-size: 16px;
     background-color: var(--color-blanco);
 }
@@ -21,7 +27,7 @@ body {
     font-family: var(--fuente-cuerpo);
     background-color: var(--color-blanco);
     color: var(--color-texto-principal);
-    line-height: 1.5;
+    line-height: 1.55;
     overflow-x: hidden;
     position: relative;
 }
@@ -44,26 +50,65 @@ ul, ol {
     list-style: none;
 }
 
+/* Indicador de Foco Accesible (WCAG 2.4.7) */
+:focus-visible {
+    outline: 2px solid var(--color-foco-anillo);
+    outline-offset: var(--color-foco-offset);
+}
+
+/* Clase de Utilidad para Lectores de Pantalla */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* Enlace de Salto Accesible */
+.enlace-salto {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    z-index: 9999;
+    padding: 10px 18px;
+    background-color: var(--color-oscuro);
+    color: var(--color-acento);
+    font-weight: 600;
+    font-size: 0.9rem;
+    border-radius: var(--radio-pill);
+    transform: translateY(-160%);
+    transition: transform 0.2s ease;
+}
+
+.enlace-salto:focus {
+    transform: translateY(0);
+}
+
 /* Tipografía de Encabezados */
 h1, h2, h3, h4, h5, h6 {
     font-family: var(--fuente-titulos);
     font-weight: 500;
-    line-height: 1.12;
+    line-height: 1.14;
     letter-spacing: -0.035em;
     color: var(--color-oscuro);
 }
 
 h1 {
-    font-size: clamp(2.6rem, 5.8vw, 4.4rem);
-    letter-spacing: -0.045em;
+    font-size: clamp(2.4rem, 5.2vw, 4.1rem);
+    letter-spacing: -0.04em;
 }
 
 h2 {
-    font-size: clamp(2.1rem, 4vw, 2.75rem);
+    font-size: clamp(2rem, 3.6vw, 2.65rem);
 }
 
 h3 {
-    font-size: clamp(1.3rem, 2.2vw, 1.6rem);
+    font-size: clamp(1.25rem, 2vw, 1.55rem);
 }
 
 p {
@@ -83,15 +128,27 @@ p {
 }
 
 .seccion-espaciado {
-    padding-top: 100px;
-    padding-bottom: 100px;
+    padding-top: 95px;
+    padding-bottom: 95px;
     position: relative;
+}
+
+/* Respeto global para preferencias de movimiento reducido */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
 }
 
 @media (max-width: 768px) {
     .seccion-espaciado {
-        padding-top: 65px;
-        padding-bottom: 65px;
+        padding-top: 60px;
+        padding-bottom: 60px;
     }
     .contenedor {
         padding-left: 16px;
